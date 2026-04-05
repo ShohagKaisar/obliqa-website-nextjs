@@ -1,0 +1,55 @@
+.whychooseus {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            gap: 24px;
+            margin: auto;
+            align-items: center;
+        }
+
+        .whychooseuscard {
+            width: 92%;
+            margin: 0 20px;
+            box-sizing: border-box;
+            background: #dedede;
+            min-height: 280px;
+            border-radius: 32px;
+            position: sticky;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #F5F7FA;
+            text-align: center;
+
+        }
+
+        .one {
+            top: 180px;
+            background: linear-gradient(135deg, #263238, #717171);
+        }
+
+        .two {
+            top: 195px;
+            background: linear-gradient(135deg, #f27f20, #f5af19);
+        }
+
+        .three {
+            top: 210px;
+            background: linear-gradient(135deg, #263238, #717171);
+        }
+
+        .four {
+            top: 225px;
+            background: linear-gradient(135deg, #f27f20, #f5af19);
+        }
+
+        .five {
+            top: 240px;
+            background: linear-gradient(135deg, #263238, #717171);
+        }
+        .six {
+            top: 255px;
+            background: linear-gradient(135deg, #f27f20, #f5af19);
+        }

@@ -1,0 +1,55 @@
+[
+{
+  "id": 2,
+  "title": "Movie Portal",
+  "description": "Movie Portal is an online movie streaming website where users can watch the latest movies and shows anytime, anywhere.",
+  "technologies": [
+    "HTML",
+    "Tailwind CSS",
+    "React",
+    "Express.js",
+    "MongoDB",
+    "Firebase",
+    "Nodejs"
+  ],
+  "image": "./Image/Project_Image/Movie_Portal_Banner.jpg",
+  "link": "https://mshohagdev-movie-portal.netlify.app/#slide3"
+},
+{
+  "id": 3,
+  "title": "Eco Adventure",
+  "description": "Eco Adventure is a tourism website offering thrilling eco-friendly travel experiences. Discover nature, book adventures.",
+  "technologies": [
+    "HTML",
+    "Tailwind CSS",
+    "React",
+    "Firebase"
+  ],
+  "image": "./Image/Project_Image/ECO_Adventure_Banner.jpg",
+  "link": "https://mshohagdev-eco-adventure.netlify.app/"
+},
+{
+  "id": 4,
+  "title": "BPL Dream",
+  "description": "BPL Dream Player Selection lets you build and share your dream BPL team by picking your favorite players.",
+  "technologies": [
+    "HTML",
+    "Tailwind CSS",
+    "React"
+  ],
+  "image": "./Image/Project_Image/BPL_Dream_Banner.jpg",
+  "link": "https://mshohagbev-bpl-dream.netlify.app/"
+},
+{
+  "id": 6,
+  "title": "Peddy (Pet Adoption)",
+  "description": "Pet Adoption is a caring platform where you can find and adopt loving pets looking for a forever home.",
+  "technologies": [
+    "HTML",
+    "Tailwind CSS",
+    "React"
+  ],
+  "image": "./Image/Project_Image/Pet_Adopt_Banner.jpg",
+  "link": "https://mshohagdev-pet-adopt.netlify.app/"
+}
+]
