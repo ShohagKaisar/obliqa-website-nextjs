@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import Link from "next/link";
 
 const plans = [

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import Map from '../Map/Map';
 import { FiMapPin, FiPhone, FiMail, FiSend } from "react-icons/fi";
 
