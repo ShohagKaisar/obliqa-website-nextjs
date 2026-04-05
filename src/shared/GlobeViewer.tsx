@@ -14,7 +14,7 @@ const GlobeViewer = () => {
     const world = (Globe as any)()(globeRef.current)
       .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
-      .backgroundColor('#f9fafb')
+      .backgroundColor('#F5F7FA')
       .showAtmosphere(true)
       .atmosphereColor('#FFFFFF')
       .atmosphereAltitude(0.25)
@@ -70,7 +70,7 @@ const GlobeViewer = () => {
   }, []);
 
   return (
-    <section className="bg-transparent">
+    <section className="bg-[#F5F7FA]">
       <div className="mx-auto max-w-fit grid lg:grid-cols-2 grid-cols-1 justify-center gap-10 items-center">
 
         {/* Globe Container */}

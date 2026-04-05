@@ -12,7 +12,12 @@ export const metadata: Metadata = {
     title: "Obliqa - Digital Agency",
     description: "Empowering your business with scalable web development and innovative digital solutions.",
     type: "website",
-  }
+  },
+    icons: {
+    icon: "/favicon.png", // or .svg
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

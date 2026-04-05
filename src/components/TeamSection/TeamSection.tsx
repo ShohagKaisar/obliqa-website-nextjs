@@ -75,7 +75,7 @@ const TeamSection = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
+                className="w-44 h-55 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
               />
               <h3 className="text-xl font-bold text-gray-800 mt-4">{member.name}</h3>
               <p className="text-[#ff6900] font-medium">{member.role}</p>
@@ -103,7 +103,7 @@ const TeamSection = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-44 h-44 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
+                className="w-44 h-55 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
               />
               <h3 className="text-xl font-bold text-gray-800 mt-4">{member.name}</h3>
               <p className="text-[#ff6900] font-medium">{member.role}</p>

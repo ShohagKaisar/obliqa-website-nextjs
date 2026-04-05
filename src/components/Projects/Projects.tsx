@@ -15,7 +15,7 @@ const Projects = () => {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <div>
         <ProjectDemo></ProjectDemo>
       </div>

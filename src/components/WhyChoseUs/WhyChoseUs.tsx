@@ -4,7 +4,7 @@ import './WhyChoseUs.css';
 const WhyChoseUs = () => {
   return (
     <div>
-      <div className="bg-white">
+      <div className="bg-[#F5F7FA]">
         <div className="text-gray-800 sticky top-[90px] flex justify-center text-5xl max-md:text-4xl font-bold py-6 w-[90%] mx-auto">
           <h1>Why Choose Us</h1>
         </div>

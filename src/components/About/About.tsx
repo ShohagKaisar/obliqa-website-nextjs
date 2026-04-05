@@ -1,12 +1,13 @@
 "use client";
 import './about.css';
+import Image from "next/image";
 import companyLogo from '../../assets/logo-about.svg'
 
 const About = () => {
   return (
     <div>
       <>
-        <div className="hero bg-[#ffffff] min-h-64 py-8 px-4" id="about-us">
+        <div className="hero bg-[#F5F7FA] min-h-64 py-8 px-4" id="about-us">
           <div className="hero-content flex-col lg:flex-row">
             <div
               className="flex justify-center lg:mt-10 lg:w-[50%]"
@@ -14,8 +15,8 @@ const About = () => {
               data-aos-mirror="true"
 
             >
-              <img
-                src={companyLogo}
+              <Image
+                src={companyLogo} alt='Logo'
                 className="object-cover transition-transform duration-300 transform w-3/4 hover:scale-110"
               />
             </div>

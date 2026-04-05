@@ -16,7 +16,7 @@ import AgencyDifference from '../AgencyDifference/AgencyDifference';
 
 const Home = () => {
   return (
-    <div className='bg-gray-50'>
+    <div className='bg-[#F5F7FA]'>
       <Hero></Hero>
       <About></About>
       <AgencyDifference></AgencyDifference>

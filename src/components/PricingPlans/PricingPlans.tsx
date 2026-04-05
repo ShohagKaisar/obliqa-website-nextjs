@@ -91,7 +91,7 @@ const PricingPlans = () => {
   };
 
   return (
-    <section className="bg-white pt-12 px-6 md:px-12 lg:px-24 mb-4">
+    <section className="bg-[#F5F7FA] pt-12 px-6 md:px-12 lg:px-24 mb-4">
       <div className="max-w-6xl mx-auto text-center mb-8">
         <h2 className="text-5xl font-bold text-gray-800 mb-2">Our Pricing Plans</h2>
         <p className="text-gray-600">Affordable solutions to grow your digital presence</p>
