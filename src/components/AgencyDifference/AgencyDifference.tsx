@@ -35,7 +35,7 @@ export default function AgencyDifference() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center my-8"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
             How We’re <span className="text-orange-500">Different</span> from Other Agencies

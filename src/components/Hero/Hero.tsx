@@ -101,7 +101,7 @@ const Hero = () => {
                 offset={-70}
               >
                 <motion.button
-                  className="px-8 py-3 bg-[#f27f20] rounded-full font-semibold text-white bg-gradient-to-r hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="px-8 py-3 bg-[#f27f20] rounded-full font-semibold text-white bg-linear-to-r hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -145,7 +145,7 @@ const Hero = () => {
             {/* Mobile View */}
             <div className="lg:hidden relative z-50">
               <a
-                href="https://wa.me/message/RAFUAZZGUL4KF1"
+                href="https://api.whatsapp.com/send?phone=8801706803616"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex justify-center items-center"
