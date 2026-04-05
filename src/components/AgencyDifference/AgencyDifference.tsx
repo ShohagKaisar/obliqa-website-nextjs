@@ -27,7 +27,7 @@ const otherAgencies = [
 
 export default function AgencyDifference() {
   return (
-    <section className="bg-[#F5F7FA] p-4">
+    <section className="bg-[#F5F7FA] px-4">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -35,9 +35,9 @@ export default function AgencyDifference() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
             How We’re <span className="text-orange-500">Different</span> from Other Agencies
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

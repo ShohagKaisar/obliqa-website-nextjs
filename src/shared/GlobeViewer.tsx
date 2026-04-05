@@ -71,7 +71,7 @@ const GlobeViewer = () => {
 
   return (
     <section className="bg-[#F5F7FA]">
-      <div className="mx-auto max-w-fit grid lg:grid-cols-2 grid-cols-1 justify-center gap-10 items-center">
+      <div className="mx-auto max-w-fit grid lg:grid-cols-2 grid-cols-1 justify-center gap-2 lg:gap-10 items-center">
 
         {/* Globe Container */}
         <motion.div
@@ -86,7 +86,7 @@ const GlobeViewer = () => {
 
         {/* Description with animation */}
         <motion.div
-          className="space-y-4 mx-5"
+          className="space-y-4 mx-5 my-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

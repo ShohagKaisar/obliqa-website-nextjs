@@ -80,14 +80,14 @@ export default function GetStartedSection() {
   ];
 
   return (
-    <div id="get-started" className="mx-auto px-4 pb-4 sm:px-6 lg:px-8 bg-[#F5F7FA]">
+    <div id="get-started" className="mx-auto px-4 pb-4 sm:px-2 lg:px-6 bg-[#F5F7FA]">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-6"
       >
-        <h2 className="text-4xl md:text-5xl py-3 font-bold bg-clip-text text-gray-800 bg-[#263238] mb-2">
+        <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-gray-800 bg-[#263238] mb-2">
           Start Your Journey
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -95,7 +95,7 @@ export default function GetStartedSection() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 max-w-[95%] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[95%] mx-auto">
         {sections.map((section, index) => (
           <motion.div
             key={section.title}
@@ -112,10 +112,10 @@ export default function GetStartedSection() {
             >
               <div className="p-8 h-full flex flex-col">
                 <div className="flex items-center mb-4">
-                  <span className="w-10 ms-[-8px] mr-3"><img src={section.icon} alt="" /></span>
+                  <span className="w-10 -ms-2 mr-3"><img src={section.icon} alt="" /></span>
                   <h3 className="text-2xl font-bold text-[#263238]">{section.title}</h3>
                 </div>
-                <p className=" flex-grow text-[#717171]">{section.content}</p>
+                <p className="grow text-[#717171]">{section.content}</p>
                 <Link
                   href={section.link}
                   className="mt-6"
