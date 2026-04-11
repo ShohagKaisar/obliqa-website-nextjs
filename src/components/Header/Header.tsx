@@ -7,7 +7,7 @@ import Mobilemenu from "../MobileMenu/Mobilemenu";
 import Menu from "../../shared/Menu";
 import { FaWhatsapp } from "react-icons/fa";
 import { useTheme } from "next-themes";
-import { useLanguage } from "../../context/LanguageContext";
+
 import { FiSun, FiMoon } from "react-icons/fi";
 
 
@@ -15,7 +15,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { lang, setLang } = useLanguage();
+
 
   useEffect(() => {
     setMounted(true);
@@ -56,15 +56,7 @@ const Header = () => {
                 </button>
               )}
 
-              {mounted && (
-                <button
-                  aria-label="Toggle Language"
-                  onClick={() => setLang(lang === "en" ? "bn" : "en")}
-                  className="font-bold border border-white/50 px-2 py-0.5 rounded hover:bg-white hover:text-black transition-colors uppercase text-sm"
-                >
-                  {lang === "en" ? "BN" : "EN"}
-                </button>
-              )}
+
 
               <a href="https://wa.link/q16322" target="_blank" className="hidden lg:block"><button className="cursor-pointer hover:text-white hover:scale-110 duration-300 rounded-full text-orange-400 text-[28px] mt-1"><FaWhatsapp /></button> </a>
 
