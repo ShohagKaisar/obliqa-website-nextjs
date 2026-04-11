@@ -38,7 +38,7 @@ const TeamSection = () => {
 
   const cardVariant = {
     hidden: { opacity: 0, y: 50 },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -52,7 +52,7 @@ const TeamSection = () => {
   return (
     <section className="py-8 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-3">Meet Our Team</h2>
+        <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-3 transition-colors duration-300">Meet Our Team</h2>
         <div className="h-1 w-20 bg-[#ff6900] mx-auto mb-10 rounded-full" />
 
         {/* Desktop Grid View */}
@@ -60,7 +60,7 @@ const TeamSection = () => {
           {teamMembers.slice(0, 3).map((member, index) => (
             <motion.div
               key={index}
-              className="relative bg-white shadow-lg rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 w-full max-w-xs overflow-hidden"
+              className="relative bg-white dark:bg-slate-800 shadow-lg dark:shadow-none rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 w-full max-w-xs overflow-hidden"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -77,9 +77,9 @@ const TeamSection = () => {
                 alt={member.name}
                 className="w-44 h-55 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800 mt-4">{member.name}</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-4 transition-colors duration-300">{member.name}</h3>
               <p className="text-[#ff6900] font-medium">{member.role}</p>
-              <p className="text-sm text-gray-600 mt-2">{member.bio}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 transition-colors duration-300">{member.bio}</p>
             </motion.div>
           ))}
         </div>
@@ -88,7 +88,7 @@ const TeamSection = () => {
           {teamMembers.slice(3).map((member, index) => (
             <motion.div
               key={index + 3}
-              className="relative bg-white shadow-lg rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 w-full max-w-xs overflow-hidden"
+              className="relative bg-white dark:bg-slate-800 shadow-lg dark:shadow-none rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 w-full max-w-xs overflow-hidden"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -105,9 +105,9 @@ const TeamSection = () => {
                 alt={member.name}
                 className="w-44 h-55 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800 mt-4">{member.name}</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-4 transition-colors duration-300">{member.name}</h3>
               <p className="text-[#ff6900] font-medium">{member.role}</p>
-              <p className="text-sm text-gray-600 mt-2">{member.bio}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 transition-colors duration-300">{member.bio}</p>
             </motion.div>
           ))}
         </div>
@@ -117,7 +117,7 @@ const TeamSection = () => {
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
-              className="relative bg-white shadow-lg rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 min-w-[260px] max-w-xs snap-start overflow-hidden"
+              className="relative bg-white dark:bg-slate-800 shadow-lg dark:shadow-none rounded-2xl p-6 text-center border-t-4 border-[#ff6900] hover:shadow-xl transition-all duration-300 min-w-[260px] max-w-xs snap-start overflow-hidden"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
@@ -134,9 +134,9 @@ const TeamSection = () => {
                 alt={member.name}
                 className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-[#ff6900] shadow"
               />
-              <h3 className="text-xl font-bold text-gray-800 mt-4">{member.name}</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mt-4 transition-colors duration-300">{member.name}</h3>
               <p className="text-[#ff6900] font-medium">{member.role}</p>
-              <p className="text-sm text-gray-600 mt-2">{member.bio}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 transition-colors duration-300">{member.bio}</p>
             </motion.div>
           ))}
         </div>

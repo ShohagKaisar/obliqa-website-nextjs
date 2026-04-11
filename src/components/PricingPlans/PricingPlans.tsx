@@ -92,18 +92,18 @@ const PricingPlans = () => {
   };
 
   return (
-    <section className="bg-[#F5F7FA] pt-12 px-6 md:px-12 lg:px-24 mb-4">
+    <section className="bg-[#F5F7FA] dark:bg-slate-950 pt-12 px-6 md:px-12 lg:px-24 mb-4 transition-colors duration-300">
       <motion.div 
         className="max-w-6xl mx-auto text-center mb-12"
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative inline-block">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 relative inline-block transition-colors duration-300">
           Our Pricing Plans
           <span className="absolute -bottom-2 left-1/4 right-1/4 h-1.5 bg-brand-primary rounded-full"></span>
         </h2>
-        <p className="text-lg text-gray-600 mt-4">Affordable solutions to grow your digital presence</p>
+        <p className="text-lg text-gray-600 dark:text-gray-400 mt-4 transition-colors duration-300">Affordable solutions to grow your digital presence</p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -117,8 +117,8 @@ const PricingPlans = () => {
             whileHover={{ y: -10 }}
             className={`relative rounded-3xl p-8 shadow-xl transition-all duration-300 border ${
               plan.isPopular 
-                ? "border-brand-primary/50 bg-gradient-to-br from-orange-50 to-white shadow-brand-primary/20 scale-105 z-10" 
-                : "border-slate-100 bg-white"
+                ? "border-brand-primary/50 bg-gradient-to-br from-orange-50 to-white dark:from-orange-900/20 dark:to-slate-900 shadow-brand-primary/20 scale-105 z-10" 
+                : "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 dark:shadow-none"
               }`}
           >
             {plan.isPopular && (
@@ -126,12 +126,12 @@ const PricingPlans = () => {
                 Most Popular
               </span>
             )}
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">{plan.name}</h3>
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2 transition-colors duration-300">{plan.name}</h3>
             <div className="text-xl font-bold text-orange-500 mb-1">
-              {plan.priceUSD} <span className="text-sm text-gray-500">({plan.priceBDT})</span>
+              {plan.priceUSD} <span className="text-sm text-gray-500 dark:text-gray-400">({plan.priceBDT})</span>
             </div>
-            <p className="text-gray-600 mb-4">{plan.description}</p>
-            <ul className="space-y-4 mb-8 text-left text-slate-700">
+            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-300">{plan.description}</p>
+            <ul className="space-y-4 mb-8 text-left text-slate-700 dark:text-slate-300 transition-colors duration-300">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center">
                   <FaCheckCircle className={`${plan.isPopular ? "text-brand-primary" : "text-slate-400"} mr-3 text-xl`} />
@@ -144,7 +144,7 @@ const PricingPlans = () => {
                 className={`w-full py-3 px-4 rounded-full font-bold transition-all duration-300 shadow-md ${
                   plan.isPopular 
                     ? "bg-gradient-to-r from-brand-primary to-orange-600 text-white hover:shadow-xl hover:from-orange-600 hover:to-brand-primary" 
-                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700"
                 }`}
               >
                 Get Started
@@ -157,8 +157,8 @@ const PricingPlans = () => {
       {/* Custom Plan Request Form */}
       <div className="mt-6 w-full p-4 md:p-8">
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">Custom Plan</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2 transition-colors duration-300">Custom Plan</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 transition-colors duration-300">
             Tell us your goals, and we'll build a solution that fits your needs and budget.
           </p>
         </div>
@@ -166,7 +166,7 @@ const PricingPlans = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
+              <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 transition-colors duration-300" htmlFor="name">
                 Name
               </label>
               <input
@@ -176,11 +176,11 @@ const PricingPlans = () => {
                 onChange={handleChange}
                 required
                 placeholder="e.g. John Doe"
-                className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                className="w-full px-4 py-3 border border-black dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-colors duration-300"
               />
             </div>
             <div>
-              <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="email">
+              <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 transition-colors duration-300" htmlFor="email">
                 Email
               </label>
               <input
@@ -190,14 +190,14 @@ const PricingPlans = () => {
                 onChange={handleChange}
                 required
                 placeholder="e.g. example@domain.com"
-                className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                className="w-full px-4 py-3 border border-black dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-colors duration-300"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="number">
+              <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 transition-colors duration-300" htmlFor="number">
                 Phone Number
               </label>
               <input
@@ -207,11 +207,11 @@ const PricingPlans = () => {
                 onChange={handleChange}
                 required
                 placeholder="e.g. +880 1234 567890"
-                className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                className="w-full px-4 py-3 border border-black dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-colors duration-300"
               />
             </div>
             <div>
-              <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
+              <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 transition-colors duration-300" htmlFor="name">
                 Your Budget Range
               </label>
               <input
@@ -221,14 +221,14 @@ const PricingPlans = () => {
                 onChange={handleChange}
                 required
                 placeholder="e.g. 10000 - 50000 BDT or USD"
-                className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                className="w-full px-4 py-3 border border-black dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-colors duration-300"
               />
             </div>
 
           </div>
 
           <div>
-            <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="message">
+            <label className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 transition-colors duration-300" htmlFor="message">
               Plan Description
             </label>
             <textarea
@@ -238,7 +238,7 @@ const PricingPlans = () => {
               required
               rows={5}
               placeholder="Describe your requirements..."
-              className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+              className="w-full px-4 py-3 border border-black dark:border-slate-600 dark:bg-slate-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400 transition-colors duration-300"
             ></textarea>
           </div>
 

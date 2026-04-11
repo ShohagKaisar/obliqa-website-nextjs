@@ -6,11 +6,11 @@ export default function ProjectDemo() {
   const projects = projectsData as any[];
 
   return (
-    <div className="container mx-auto pt-30">
+    <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-32 pb-8">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-bold text-center mb-12 text-slate-800"
+        className="text-5xl font-bold text-center mb-12 text-slate-800 dark:text-white transition-colors duration-300"
       >
         Our Portfolio
       </motion.h1>
@@ -25,7 +25,7 @@ export default function ProjectDemo() {
             whileHover={{ y: -5 }}
             className="h-full"
           >
-            <div className="bg-blue-200 rounded-xl shadow-md overflow-hidden border border-blue-800 hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+            <div className="bg-blue-200 dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-blue-800 dark:border-slate-700 hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
 
               {/* Project Header */}
               <div className="relative bg-gradient-to-br from-sky-100 to-indigo-100 overflow-hidden">
@@ -38,10 +38,10 @@ export default function ProjectDemo() {
 
               {/* Project Content */}
               <div className="p-5 flex-grow flex flex-col">
-                <h2 className="text-xl font-bold text-slate-800 py-2">
+                <h2 className="text-xl font-bold text-slate-800 dark:text-white py-2 transition-colors duration-300">
                   {project.title}
                 </h2>
-                <p className="text-slate-600 mb-4 line-clamp-3 flex-grow">
+                <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-3 flex-grow transition-colors duration-300">
                   {project.description}
                 </p>
               </div>

@@ -1,12 +1,13 @@
 "use client";
 import './about.css';
 import Image from "next/image";
-import companyLogo from '../../assets/logo-about.svg'
+import companyLogoLight from '../../assets/logo-about.svg'
+import companyLogoDark from '../../assets/logo.svg'
 import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className="bg-slate-50 overflow-hidden" id="about-us">
+    <div className="bg-slate-50 dark:bg-slate-900 overflow-hidden transition-colors duration-300" id="about-us">
       <div className="max-w-7xl mx-auto py-16 px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Image Section */}
@@ -18,9 +19,14 @@ const About = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <Image
-              src={companyLogo} 
+              src={companyLogoLight} 
               alt='Obliqa Logo'
-              className="w-full max-w-sm lg:max-w-md object-contain"
+              className="w-full max-w-sm lg:max-w-md object-contain dark:hidden"
+            />
+            <Image
+              src={companyLogoDark} 
+              alt='Obliqa Logo'
+              className="w-full max-w-sm lg:max-w-md object-contain hidden dark:block"
             />
           </motion.div>
 
@@ -32,16 +38,16 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6 relative">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6 relative transition-colors duration-300">
               About Us
             </h2>
-            <p className="text-lg leading-relaxed text-slate-600 mb-6 text-justify">
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 mb-6 text-justify transition-colors duration-300">
               At <span className="font-semibold text-brand-primary">OBLIQA IT Solutions</span>, we stand for excellence, faith, and innovation. As a dynamic emerging agency, we bring fresh ideas and a dynamic approach to the ever-evolving tech industry. We don’t just take on projects, we take our clients' visions seriously, turning their ideas into success stories.
             </p>
-            <p className="text-lg leading-relaxed text-slate-600 mb-6 text-justify">
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 mb-6 text-justify transition-colors duration-300">
               Technology should empower businesses, not just support them. That’s why we go beyond coding. We strategize, innovate, and deliver solutions that truly make a difference. Whether it’s a small startup or a large enterprise, our expert development team is ready to build, scale, and optimize with cutting-edge technology.
             </p>
-            <p className="text-lg leading-relaxed text-slate-600 text-justify">
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 text-justify transition-colors duration-300">
               Our mission is bigger. We aim to make OBLIQA IT Solutions a globally recognized technology leader known for delivering premium solutions that redefine industries. Let’s build the future together.
             </p>
           </motion.div>

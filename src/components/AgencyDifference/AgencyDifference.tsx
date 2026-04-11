@@ -27,7 +27,7 @@ const otherAgencies = [
 
 export default function AgencyDifference() {
   return (
-    <section className="bg-[#F5F7FA] px-4">
+    <section className="bg-[#F5F7FA] dark:bg-slate-950 px-4 py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -35,12 +35,12 @@ export default function AgencyDifference() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center my-8"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
             How We’re <span className="text-orange-500">Different</span> from Other Agencies
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
             Discover why businesses trust Obliqa IT Solutions for modern,
             scalable, and secure web solutions.
           </p>
@@ -52,7 +52,7 @@ export default function AgencyDifference() {
           <motion.div
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="rounded-3xl bg-white border border-slate-100 p-8 md:p-10 shadow-xl shadow-slate-200/40 relative overflow-hidden"
+            className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-8 md:p-10 shadow-xl shadow-slate-200/40 dark:shadow-none relative overflow-hidden transition-colors duration-300"
           >
             <div className="absolute top-0 right-0 w-40 h-40 bg-brand-primary/5 rounded-bl-full pointer-events-none"></div>
             <h3 className="text-2xl font-bold text-brand-primary mb-8 relative z-10 flex items-center gap-3">
@@ -64,9 +64,9 @@ export default function AgencyDifference() {
               {ourApproach.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 text-gray-800"
+                  className="flex items-center gap-4 text-gray-800 dark:text-gray-200 transition-colors duration-300"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-500">
                     {item.icon}
                   </span>
                   <span className="font-medium">{item.text}</span>
@@ -79,9 +79,9 @@ export default function AgencyDifference() {
           <motion.div
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="rounded-3xl bg-slate-50 border border-slate-200 p-8 md:p-10 shadow-lg relative overflow-hidden opacity-90"
+            className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-8 md:p-10 shadow-lg dark:shadow-none relative overflow-hidden opacity-90 transition-colors duration-300"
           >
-            <h3 className="text-2xl font-bold text-slate-500 mb-8 relative z-10 flex items-center gap-3">
+            <h3 className="text-2xl font-bold text-slate-500 dark:text-slate-400 mb-8 relative z-10 flex items-center gap-3 transition-colors duration-300">
               <span className="w-8 h-1 bg-slate-300 rounded-full"></span>
               Other Agencies
             </h3>
@@ -90,9 +90,9 @@ export default function AgencyDifference() {
               {otherAgencies.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 text-gray-600"
+                  className="flex items-center gap-4 text-gray-600 dark:text-gray-400 transition-colors duration-300"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-500">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 text-red-500">
                     <XCircle size={22} />
                   </span>
                   <span>{item}</span>

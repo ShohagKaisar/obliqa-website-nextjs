@@ -14,7 +14,7 @@ const GlobeViewer = () => {
     const world = (Globe as any)()(globeRef.current)
       .globeImageUrl('https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg')
       .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
-      .backgroundColor('#F5F7FA')
+      .backgroundColor('rgba(0,0,0,0)')
       .showAtmosphere(true)
       .atmosphereColor('#FFFFFF')
       .atmosphereAltitude(0.25)
@@ -70,7 +70,7 @@ const GlobeViewer = () => {
   }, []);
 
   return (
-    <section className="bg-[#F5F7FA]">
+    <section className="bg-[#F5F7FA] dark:bg-slate-950 transition-colors duration-300">
       <div className="mx-auto max-w-fit grid lg:grid-cols-2 grid-cols-1 justify-center gap-2 lg:gap-10 items-center">
 
         {/* Globe Container */}
@@ -92,11 +92,11 @@ const GlobeViewer = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <p className="flex items-center justify-items-start gap-2 text-2xl  lg:text-4xl font-bold text-gray-800">
+          <p className="flex items-center justify-items-start gap-2 text-2xl  lg:text-4xl font-bold text-gray-800 dark:text-white transition-colors duration-300">
             We Serve Clients Globally<span className="text-orange-500"><GiWorld /></span>
           </p>
 
-          <p className="text-base sm:text-xl text-black leading-relaxed">
+          <p className="text-base sm:text-xl text-black dark:text-gray-300 leading-relaxed transition-colors duration-300">
             From <span className="text-orange-500 font-semibold">Bangladesh</span>, we empower businesses worldwide<br />
             with fast, reliable, and scalable digital solutions.
           </p>
