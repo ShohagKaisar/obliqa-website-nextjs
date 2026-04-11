@@ -4,6 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { FiSend } from "react-icons/fi";
 import emailjs from '@emailjs/browser';
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const plans = [
   {
@@ -62,11 +63,11 @@ const PricingPlans = () => {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     setStatus("Sending...");
 
@@ -81,7 +82,7 @@ const PricingPlans = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setStatus("Message Sent Successfully!");
-          setFormData({ name: "", number: "", email: "", message: "" });
+          setFormData({ name: "", number: "", email: "", price: "", message: "" });
         },
         (error) => {
           console.log("FAILED...", error);
@@ -92,16 +93,32 @@ const PricingPlans = () => {
 
   return (
     <section className="bg-[#F5F7FA] pt-12 px-6 md:px-12 lg:px-24 mb-4">
-      <div className="max-w-6xl mx-auto text-center mb-8">
-        <h2 className="text-5xl font-bold text-gray-800 mb-2">Our Pricing Plans</h2>
-        <p className="text-gray-600">Affordable solutions to grow your digital presence</p>
-      </div>
+      <motion.div 
+        className="max-w-6xl mx-auto text-center mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative inline-block">
+          Our Pricing Plans
+          <span className="absolute -bottom-2 left-1/4 right-1/4 h-1.5 bg-brand-primary rounded-full"></span>
+        </h2>
+        <p className="text-lg text-gray-600 mt-4">Affordable solutions to grow your digital presence</p>
+      </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-2">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {plans.map((plan, idx) => (
-          <div
+          <motion.div
             key={idx}
-            className={`relative border rounded-xl p-6 shadow-md transition hover:shadow-xl ${plan.isPopular ? "border-orange-500 ring-2 ring-orange-300 bg-orange-50" : "bg-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: idx * 0.1, duration: 0.5 }}
+            whileHover={{ y: -10 }}
+            className={`relative rounded-3xl p-8 shadow-xl transition-all duration-300 border ${
+              plan.isPopular 
+                ? "border-brand-primary/50 bg-gradient-to-br from-orange-50 to-white shadow-brand-primary/20 scale-105 z-10" 
+                : "border-slate-100 bg-white"
               }`}
           >
             {plan.isPopular && (
@@ -114,20 +131,26 @@ const PricingPlans = () => {
               {plan.priceUSD} <span className="text-sm text-gray-500">({plan.priceBDT})</span>
             </div>
             <p className="text-gray-600 mb-4">{plan.description}</p>
-            <ul className="space-y-2 mb-6 text-left text-gray-700">
+            <ul className="space-y-4 mb-8 text-left text-slate-700">
               {plan.features.map((feature, i) => (
                 <li key={i} className="flex items-center">
-                  <FaCheckCircle className="text-green-500 mr-2" />
-                  {feature}
+                  <FaCheckCircle className={`${plan.isPopular ? "text-brand-primary" : "text-slate-400"} mr-3 text-xl`} />
+                  <span className="font-medium">{feature}</span>
                 </li>
               ))}
             </ul>
             <Link href={'/contact'}>
-              <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-full font-semibold transition">
+              <button 
+                className={`w-full py-3 px-4 rounded-full font-bold transition-all duration-300 shadow-md ${
+                  plan.isPopular 
+                    ? "bg-gradient-to-r from-brand-primary to-orange-600 text-white hover:shadow-xl hover:from-orange-600 hover:to-brand-primary" 
+                    : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                }`}
+              >
                 Get Started
               </button>
             </Link>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -213,7 +236,7 @@ const PricingPlans = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows={5}
               placeholder="Describe your requirements..."
               className="w-full px-4 py-3 border border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
             ></textarea>

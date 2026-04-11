@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "../index.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { ThemeProvider } from "../shared/ThemeProvider";
+import { LanguageProvider } from "../context/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Obliqa - Premium Web Development & Digital Agency",
@@ -26,11 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        <Header />
-        {children}
-        <Footer />
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="antialiased font-sans bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <LanguageProvider>
+            <Header />
+            {children}
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

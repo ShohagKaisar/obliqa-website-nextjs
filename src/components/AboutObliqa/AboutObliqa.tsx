@@ -9,7 +9,7 @@ import TeamSection from '../TeamSection/TeamSection';
 const AboutObliqa = () => {
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300">
       {/* Hero Section with Background Video */}
       <section className="relative w-full pt-28 pb-10 lg:h-screen flex items-center justify-center text-center text-white">
   {/* Background Video */}
@@ -32,29 +32,64 @@ const AboutObliqa = () => {
   </motion.div>
 </section>
       {/* About Us Section */}
-      <section className="py-4 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold my-6">About Us</h2>
-          <p className="max-w-4xl mx-auto text-gray-600 text-justify">
-            At OBLIQA IT Solutions, we stand for excellence, faith, and innovation. As a startup company, we bring fresh ideas and a dynamic approach to the ever-evolving tech industry. We don’t just take on projects, we take our clients visions seriously, turning their ideas into success stories.
-
-            Technology should empower businesses, not just support them. That’s why we go beyond coding. We strategize, innovate, and deliver solutions that truly make a difference. Whether it’s a small startup or a large enterprise, our expert development team is ready to build, scale, and optimize with cutting-edge technology.
-
-            But we’re not stopping here. Our mission is bigger. We aim to make OBLIQA IT Solutions a globally recognized technology leader known for delivering solutions that redefine industries while keeping client satisfaction at the heart of everything we do.
-
-            Let’s build the future together.
-          </p>
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-10 text-slate-800 dark:text-white"
+          >
+            About Us
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 text-justify text-lg leading-relaxed text-slate-600 dark:text-slate-300 space-y-6"
+          >
+            <p>
+              At <strong className="text-brand-primary">OBLIQA IT Solutions</strong>, we stand for excellence, faith, and innovation. As a startup company, we bring fresh ideas and a dynamic approach to the ever-evolving tech industry. We don’t just take on projects, we take our clients' visions seriously, turning their ideas into success stories.
+            </p>
+            <p>
+              Technology should empower businesses, not just support them. That’s why we go beyond coding. We strategize, innovate, and deliver solutions that truly make a difference. Whether it’s a small startup or a large enterprise, our expert development team is ready to build, scale, and optimize with cutting-edge technology.
+            </p>
+            <p>
+              But we’re not stopping here. Our mission is bigger. We aim to make OBLIQA IT Solutions a globally recognized technology leader known for delivering solutions that redefine industries while keeping client satisfaction at the heart of everything we do.
+            </p>
+            <div className="pt-4 text-center">
+              <span className="inline-block px-8 py-3 bg-brand-primary text-white font-bold rounded-full shadow-lg">Let’s build the future together</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="pt-4 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold my-6">Our Mission</h2>
-          <p className="max-w-4xl mx-auto text-gray-600 text-justify">
-            At OBLIQA IT Solutions, our mission is to empower businesses of all sizes by delivering cutting-edge, scalable, and intuitive digital solutions that drive growth and efficiency. We are committed to helping our clients thrive in an increasingly digital world by offering customized services in web development, mobile applications, digital marketing, and cloud-based technologies.
-            Through continuous innovation, a client-first mindset, and a deep understanding of emerging trends, we aim to transform ideas into impactful digital experiences. Our goal is not only to solve current challenges but to anticipate future opportunities enabling our clients to stay ahead in a competitive marketplace.
-          </p>
+      <section className="py-10 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-10 text-slate-800 dark:text-white"
+          >
+            Our Mission
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 text-justify text-lg leading-relaxed text-slate-600 dark:text-slate-300 space-y-6"
+          >
+            <p>
+              At <strong className="text-brand-primary">OBLIQA IT Solutions</strong>, our mission is to empower businesses of all sizes by delivering cutting-edge, scalable, and intuitive digital solutions that drive growth and efficiency. We are committed to helping our clients thrive in an increasingly digital world by offering customized services in web development, mobile applications, digital marketing, and cloud-based technologies.
+            </p>
+            <p>
+              Through continuous innovation, a client-first mindset, and a deep understanding of emerging trends, we aim to transform ideas into impactful digital experiences. Our goal is not only to solve current challenges but to anticipate future opportunities enabling our clients to stay ahead in a competitive marketplace.
+            </p>
+          </motion.div>
         </div>
       </section>
 

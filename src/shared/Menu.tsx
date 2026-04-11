@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
+import { useLanguage } from "../context/LanguageContext";
 
-const Menu = ({ onItemClick }) => {
+const Menu = ({ onItemClick }: { onItemClick?: () => void }) => {
+  const { t } = useLanguage();
+  
   const handleClick = () => {
     window.scrollTo(0, 0);
     if (onItemClick) {
@@ -16,31 +19,31 @@ const Menu = ({ onItemClick }) => {
     <div className="text-xl text-[#ffffff] flex flex-col gap-5 lg:flex-row lg:space-x-5 items-center">
       <Link href="/">
         <button onClick={handleClick} className={menuItemClass}>
-          Home
+          {t("nav.home")}
         </button>
       </Link>
 
       <Link href="/about">
         <button onClick={handleClick} className={menuItemClass}>
-          About
+          {t("nav.about")}
         </button>
       </Link>
 
       <Link href="/services">
         <button onClick={handleClick} className={menuItemClass}>
-          Services
+          {t("nav.services")}
         </button>
       </Link>
 
       <Link href="/portfolio">
         <button onClick={handleClick} className={menuItemClass}>
-          Portfolio
+          {t("nav.portfolio")}
         </button>
       </Link>
 
       <Link href="/contact">
         <button onClick={handleClick} className={menuItemClass}>
-          Contact Us
+          {t("nav.contact")}
         </button>
       </Link>
     </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Map from '../Map/Map';
 import { FiMapPin, FiPhone, FiMail, FiSend } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -52,19 +53,24 @@ const ContactForm = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center bg-[#F5F7FA] pt-32 px-4 pb-6">
-        <div className="max-w-6xl w-full bg-white rounded-xl shadow-lg overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-900 pt-32 px-4 pb-6 transition-colors duration-300">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl w-full bg-white dark:bg-slate-800 rounded-3xl shadow-2xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 overflow-hidden"
+        >
           <div className="md:flex">
             {/* Contact Form Section */}
-            <div className="w-full md:w-1/2 p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">Contact Us</h2>
-              <p className="text-gray-600 mb-8">
+            <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">Let's Talk</h2>
+              <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                 Have questions or want to discuss a project? Send us a message and we'll get back to you soon.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
+                  <label className="block text-slate-700 dark:text-slate-300 text-sm font-medium mb-2" htmlFor="name">
                     Name
                   </label>
                   <input
@@ -74,13 +80,13 @@ const ContactForm = () => {
                     onChange={handleChange}
                     required
                     placeholder="e.g. John Doe"
-                    className="w-full px-4 py-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                    className="w-full px-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent placeholder-slate-400 dark:placeholder-slate-500 text-slate-800 dark:text-white transition-all duration-300 outline-none"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="number">
+                    <label className="block text-slate-700 dark:text-slate-300 text-sm font-medium mb-2" htmlFor="number">
                       Phone Number
                     </label>
                     <input
@@ -90,12 +96,12 @@ const ContactForm = () => {
                       onChange={handleChange}
                       required
                       placeholder="e.g. +880 1234 567890"
-                      className="w-full px-4 py-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                      className="w-full px-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent placeholder-slate-400 dark:placeholder-slate-500 text-slate-800 dark:text-white transition-all duration-300 outline-none"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="email">
+                    <label className="block text-slate-700 dark:text-slate-300 text-sm font-medium mb-2" htmlFor="email">
                       Email
                     </label>
                     <input
@@ -105,13 +111,13 @@ const ContactForm = () => {
                       onChange={handleChange}
                       required
                       placeholder="e.g. example@domain.com"
-                      className="w-full px-4 py-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                      className="w-full px-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent placeholder-slate-400 dark:placeholder-slate-500 text-slate-800 dark:text-white transition-all duration-300 outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="message">
+                  <label className="block text-slate-700 dark:text-slate-300 text-sm font-medium mb-2" htmlFor="message">
                     Message
                   </label>
                   <textarea
@@ -119,15 +125,15 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="5"
+                    rows={5}
                     placeholder="Tell us about your project or inquiry..."
-                    className="w-full px-4 py-3 border border-gray-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                    className="w-full px-4 py-3.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-brand-primary focus:border-transparent placeholder-slate-400 dark:placeholder-slate-500 text-slate-800 dark:text-white transition-all duration-300 outline-none resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center"
+                  className="w-full bg-brand-primary hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition duration-300 flex items-center justify-center shadow-lg shadow-brand-primary/30"
                 >
                   <FiSend className="mr-2" />
                   Send Message
@@ -142,89 +148,72 @@ const ContactForm = () => {
             </div>
 
             {/* Contact Info Section */}
-            <div className="w-full md:w-1/2 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 md:p-12">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+            <div className="w-full md:w-1/2 bg-gradient-to-br from-brand-primary/5 to-slate-100 dark:from-brand-primary/10 dark:to-slate-800/80 p-8 md:p-12 lg:p-16 border-l border-slate-100 dark:border-slate-700/50">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8">Contact Information</h3>
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiMapPin className="text-orange-600" size={20} />
+                  <div className="bg-white dark:bg-slate-700 shadow-sm p-3.5 rounded-full mr-5 border border-slate-100 dark:border-slate-600">
+                    <FiMapPin className="text-brand-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Address</h4>
-                    <p className="text-gray-700">Dhaka, Bangladesh</p>
+                    <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">Address</h4>
+                    <p className="text-slate-700 dark:text-slate-300 font-medium">Dhaka, Bangladesh</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiPhone className="text-orange-600" size={20} />
+                  <div className="bg-white dark:bg-slate-700 shadow-sm p-3.5 rounded-full mr-5 border border-slate-100 dark:border-slate-600">
+                    <FiPhone className="text-brand-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Phone</h4>
-                    <p className="text-gray-700">+880 170 680 3616</p>
+                    <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">Phone</h4>
+                    <p className="text-slate-700 dark:text-slate-300 font-medium">+880 170 680 3616</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-full mr-4">
-                    <FiMail className="text-orange-600" size={20} />
+                  <div className="bg-white dark:bg-slate-700 shadow-sm p-3.5 rounded-full mr-5 border border-slate-100 dark:border-slate-600">
+                    <FiMail className="text-brand-primary" size={20} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Email</h4>
-                    <p className="text-gray-700">contact@obliqa.com</p>
+                    <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">Email</h4>
+                    <p className="text-slate-700 dark:text-slate-300 font-medium">contact@obliqa.com</p>
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-700 space-y-4">
                   {/* 24/7 Online Support Highlight */}
-                  <div className="flex items-center justify-between bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white px-4 py-2 rounded-lg shadow-md">
-                    <div className="flex items-center gap-2">
-                      <svg className="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636A9 9 0 105.636 18.364 9 9 0 0018.364 5.636z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span className="font-semibold">24/7 Online Support</span>
+                  <div className="flex items-center justify-between bg-gradient-to-r from-brand-primary to-orange-600 text-white px-5 py-3 rounded-xl shadow-md">
+                    <div className="flex items-center gap-3">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30"></div>
+                        <div className="relative w-3 h-3 bg-white rounded-full"></div>
+                      </div>
+                      <span className="font-semibold text-sm">24/7 Support</span>
                     </div>
-                    <span className="font-bold">Always Available</span>
+                    <span className="font-bold text-sm tracking-wide">Always Online</span>
                   </div>
 
                   {/* Regular Weekly Schedule */}
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Saturday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Sunday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Monday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Tuesday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Wednesday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Thursday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Friday</span>
-                    <span className="text-gray-800 font-medium">9:00 AM - 6:00 PM</span>
+                  <div className="bg-white dark:bg-slate-900/50 rounded-xl p-5 border border-slate-100 dark:border-slate-700">
+                    <h4 className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">Business Hours</h4>
+                    <div className="space-y-2.5 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-500 dark:text-slate-400">Sun - Thu</span>
+                        <span className="text-slate-800 dark:text-slate-200 font-semibold">9:00 AM - 6:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-500 dark:text-slate-400">Friday - Saturday</span>
+                        <span className="text-brand-primary font-semibold">Closed</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
-
+        </motion.div>
       </section>
       <Map></Map>
     </>

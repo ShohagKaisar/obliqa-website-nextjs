@@ -81,8 +81,12 @@ const WorkProcess = () => {
               viewport={{ once: true, margin: "-50px" }}
               className="relative"
             >
-              <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-full">
-                <div className="flex flex-col items-start mb-6 space-y-3">
+              <motion.div 
+                className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:shadow-2xl hover:border-brand-primary/30 transition-all duration-300 h-full relative overflow-hidden group"
+                whileHover={{ y: -8 }}
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -z-0 transition-colors duration-500 group-hover:bg-brand-primary/5"></div>
+                <div className="relative z-10 flex flex-col items-start mb-6 space-y-4">
                   <div className="p-2 rounded-lg bg-indigo-50 mr-4 flex-shrink-0">
                     {step.icon}
                     <div className="flex items-center mb-1">
@@ -97,8 +101,8 @@ const WorkProcess = () => {
                     </h3>
                   </div>
                 </div>
-                <p className="text-[#717171] -mt-5">{step.description}</p>
-              </div>
+                <p className="text-slate-600 leading-relaxed relative z-10">{step.description}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

@@ -56,106 +56,83 @@ const Hero = () => {
   };
 
   return (
-    <div ref={ref}>
-      <div className="relative lg:min-h-screen bg-dark opacity-95 z-0 overflow-hidden py-10">
-        {/* Background Video with Animation */}
-        <motion.div
-          className="absolute top-0 left-0 w-full h-full overflow-hidden"
-          initial="hidden"
-          animate={controls}
-          variants={videoVariants}
+    <div ref={ref} className="relative w-full h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
+      {/* Background Video with Animation */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full overflow-hidden"
+        initial="hidden"
+        animate={controls}
+        variants={videoVariants}
+      >
+        <Video videoSrc={video} className="w-full h-full object-cover" />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+      </motion.div>
+
+      {/* Hero Content with Staggered Animations */}
+      <motion.div
+        className="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center justify-center text-center text-white"
+        initial="hidden"
+        animate={controls}
+        variants={containerVariants}
+      >
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6"
+          variants={itemVariants}
         >
-          <Video videoSrc={video} className="w-full h-full object-cover absolute" />
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
-        </motion.div>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] filter brightness-110">
+            OBLIQA IT Solutions
+          </span>
+        </motion.h1>
 
-        {/* Hero Content with Staggered Animations */}
-        <motion.section
-          className="relative w-full lg:h-screen flex items-center justify-center text-center text-white"
-          initial="hidden"
-          animate={controls}
-          variants={containerVariants}
+        <motion.p
+          className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-2xl"
+          variants={itemVariants}
         >
-          <motion.div className="relative z-10 px-6" variants={containerVariants}>
-            <motion.h1
-              className="pt-24 lg:pt-0 text-3xl lg:text-5xl md:text-7xl font-bold mb-6"
-              variants={itemVariants}
-            >
-              <span className="text-white bg-clip-text bg-white">
-                OBLIQA IT Solutions
-              </span>
-            </motion.h1>
+          We deliver top-quality digital solutions, including web design, development, SEO, and marketing, tailored to your business. Our strategies boost growth, visibility, and digital transformation for startups and enterprises alike. With expert support, we ensure your success online.
+        </motion.p>
 
-            <motion.p
-              className="mt-4 text-md lg:text-lg md:text-xl max-w-xl mx-auto text-[#F5F7FA]"
-              variants={itemVariants}
-            >
-              We deliver top-quality digital solutions, including web design, development, SEO, and marketing, tailored to your business. Our strategies boost growth, visibility, and digital transformation for startups and enterprises alike. With expert support, we ensure your success online.
-            </motion.p>
-
-            <motion.div variants={itemVariants} className="mt-8">
-              <ScrollLink
-                to="get-started"
-                smooth={true}
-                duration={500}
-                offset={-70}
-              >
-                <motion.button
-                  className="px-8 py-3 bg-[#f27f20] rounded-full font-semibold text-white bg-linear-to-r hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Get Started
-                </motion.button>
-              </ScrollLink>
-
-            </motion.div>
-          </motion.div>
-
-          {/* Animated Whatsapp Indicator */}
-          <motion.div
-            className="absolute bottom-0 lg:bottom-10 left-10 lg:left-1/2 transform -translate-x-1/2 z-50"
-            animate={{
-              y: [0, 10, 0],
-              opacity: [0.6, 1, 0.6]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+        <motion.div variants={itemVariants}>
+          <ScrollLink
+            to="how_we_work"
+            smooth={true}
+            duration={500}
+            offset={-70}
           >
-            {/* Desktop View */}
-            <div className="hidden lg:block">
-              <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-                <motion.div
-                  className="w-1 h-2 bg-white rounded-full mt-1"
-                  animate={{
-                    y: [0, 4, 0]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-              </div>
-            </div>
+            <motion.button
+              className="px-10 py-4 bg-gradient-to-r from-[#f27f20] to-orange-600 rounded-full font-bold text-white transition-all duration-300 shadow-xl"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started
+            </motion.button>
+          </ScrollLink>
+        </motion.div>
+      </motion.div>
 
-            {/* Mobile View */}
-            <div className="lg:hidden relative z-50">
-              <a
-                href="https://api.whatsapp.com/send?phone=8801706803616"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex justify-center items-center"
-              >
-                <img className="h-8 w-8" src={whatsappIcon.src} alt="WhatsApp Chat" />
-              </a>
-            </div>
-          </motion.div>
-        </motion.section>
-      </div>
+      {/* Animated Whatsapp Indicator */}
+      <motion.div
+        className="absolute bottom-6 md:bottom-10 left-6 md:left-1/2 md:transform md:-translate-x-1/2 z-50"
+        animate={{ y: [0, 10, 0], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <div className="hidden md:flex w-6 h-10 border-2 border-white rounded-full justify-center">
+          <motion.div
+            className="w-1 h-2 bg-white rounded-full mt-1"
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+        <div className="md:hidden relative z-50">
+          <a
+            href="https://api.whatsapp.com/send?phone=8801706803616"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-14 h-14 rounded-full bg-white/10 backdrop-blur-md justify-center items-center"
+          >
+            <img className="h-8 w-8" src={whatsappIcon.src} alt="WhatsApp Chat" />
+          </a>
+        </div>
+      </motion.div>
     </div>
   );
 }

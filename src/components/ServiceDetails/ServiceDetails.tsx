@@ -74,54 +74,59 @@ const ServiceDetails = () => {
   };
 
   return (
-    <div className="flex justify-center bg-gray-50 mx-4 lg:mx-24 py-8 mt-20">
-      <div className="mx-auto">
+    <div className="flex justify-center bg-transparent py-8 mt-10 md:mt-20 w-full transition-colors duration-300">
+      <div className="w-full max-w-7xl mx-auto px-4 lg:px-8">
         <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-slate-800 dark:text-white"
         >
           Our Professional Services
         </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               custom={index}
               initial="hidden"
               whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               variants={fadeIn}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              whileHover={{ y: -8 }}
+              className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 overflow-hidden relative group"
             >
               <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
-              <div className="p-6 lg:p-8">
-                <div className="flex items-center mb-4">
-                  <span className="text-2xl mr-3">{service.icon}</span>
-                  <h2 className="text-2xl font-semibold text-gray-800">{service.title}</h2>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 dark:bg-slate-700/30 rounded-bl-full -z-0 transition-colors duration-500 group-hover:bg-brand-primary/10"></div>
+              <div className="p-8 lg:p-10 relative z-10 flex flex-col h-full">
+                <div className="flex items-center mb-6">
+                  <span className="text-4xl mr-4">{service.icon}</span>
+                  <h2 className="text-2xl font-bold text-slate-800 dark:text-white">{service.title}</h2>
                 </div>
 
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-slate-600 dark:text-slate-400 mb-8 flex-grow leading-relaxed">{service.description}</p>
 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, i) => (
                     <motion.li
                       key={i}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: 0.1 * i }}
-                      className="text-gray-700 flex items-start"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + (0.1 * i) }}
+                      className="text-slate-700 dark:text-slate-300 flex items-start"
                     >
-                      <span className="mr-2 text-green-500">•</span>
+                      <span className="mr-3 text-brand-primary font-bold">✓</span>
                       <span>{feature}</span>
                     </motion.li>
                   ))}
                 </ul>
 
-                <Link href={'/contact'}>
+                <Link href={'/contact'} className="mt-auto pt-4 flex">
                   <button
                     onClick={handleClick}
-                    className="w-full py-2 bg-orange-500 text-white rounded-full hover:bg-gray-700 transition"
+                    className="w-full py-3.5 bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-white font-bold rounded-full hover:bg-brand-primary hover:text-white dark:hover:bg-brand-primary transition-all duration-300 shadow-sm"
                   >
                     Get in Touch
                   </button>

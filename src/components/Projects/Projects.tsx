@@ -15,7 +15,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div>
         <ProjectDemo></ProjectDemo>
       </div>
@@ -31,22 +31,22 @@ const Projects = () => {
                 whileHover={{ y: -5 }}
                 className="h-full"
               >
-                <div className="bg-blue-200 rounded-xl shadow-md overflow-hidden border border-blue-800 hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
+                <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 hover:border-brand-primary/50 transition-all duration-300 h-full flex flex-col overflow-hidden">
 
                   {/* Project Header */}
-                  <div className="relative bg-gradient-to-br from-sky-100 to-indigo-100 overflow-hidden">
-                    <div className="p-2">
-                      <img className="h-56 w-full rounded-xl shadow-md" src={project.image} alt="" />
+                  <div className="relative overflow-hidden group">
+                    <div className="p-3">
+                      <img className="h-56 w-full rounded-2xl shadow-md group-hover:scale-105 transition-transform duration-500 object-cover" src={project.image} alt="" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent" />
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-5 flex-grow flex flex-col">
-                    <h2 className="text-xl font-bold text-slate-800 py-2">
+                  <div className="p-6 flex-grow flex flex-col bg-white dark:bg-slate-800 relative z-10">
+                    <h2 className="text-2xl font-bold text-slate-800 dark:text-white py-2">
                       {project.title}
                     </h2>
-                    <p className="text-slate-600 mb-4 line-clamp-3 flex-grow">
+                    <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
                       {project.description}
                     </p>
 
@@ -59,7 +59,7 @@ const Projects = () => {
                         {project.technologies?.map((tech: string) => (
                           <div
                             key={tech}
-                            className="flex items-center px-3 py-1 rounded-full bg-slate-50 text-xs font-medium text-slate-700 border border-slate-200"
+                            className="flex items-center px-4 py-1.5 rounded-full bg-slate-50 dark:bg-slate-700/50 text-sm font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-600 shadow-sm"
                           >
                             <span className="mr-1.5">{techIcons[tech] || <FiCpu className="text-slate-500" />}</span>
                             {tech}

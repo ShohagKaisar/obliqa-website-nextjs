@@ -8,7 +8,9 @@ const Footer = () => {
   return (
     <div>
       <>
-        <footer className="grid lg:gap-8 lg:grid-cols-4 bg-[#263238] text-white min-h-80 py-12 px-5 ">
+        <footer className="grid lg:gap-12 lg:grid-cols-4 bg-slate-950 text-white py-16 px-8 lg:px-20 border-t border-white/5 relative overflow-hidden">
+          {/* Subtle glow effect behind footer */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none"></div>
           <div>
             <nav className="flex flex-col gap-4 items-center my-4">
               <Image src={companyLogo} alt="Logo" />
@@ -22,31 +24,34 @@ const Footer = () => {
               </div>
             </nav>
           </div>
-          <div className="flex flex-col text-current space-y-2 mb-5">
-            <h6 className="text-2xl font-bold mb-3 text-white  uppercase tracking-wider">
+          <div className="flex flex-col text-gray-300 space-y-3 mb-5">
+            <h6 className="text-xl lg:text-2xl font-bold mb-4 text-white uppercase tracking-wider relative inline-block">
               Information
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-brand-primary to-transparent rounded-full"></span>
             </h6>
-            <Link href="/terms-conditions">Terms & Conditions</Link>
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/accessibility">Accessibility Statement</Link>
-            <Link href="/ethics-compliance">Ethics & Compliance</Link>
-            <a className="text-xl link text-md text-gray-300 link-hover" href="https://bd.obliqa.com">OBLIQA Bangladesh</a>
+            <Link className="hover:text-brand-primary transition-colors duration-300" href="/terms-conditions">Terms & Conditions</Link>
+            <Link className="hover:text-brand-primary transition-colors duration-300" href="/privacy-policy">Privacy Policy</Link>
+            <Link className="hover:text-brand-primary transition-colors duration-300" href="/accessibility">Accessibility Statement</Link>
+            <Link className="hover:text-brand-primary transition-colors duration-300" href="/ethics-compliance">Ethics & Compliance</Link>
+            <a className="link text-md hover:text-brand-primary transition-colors duration-300" href="https://bd.obliqa.com">OBLIQA Bangladesh</a>
           </div>
-          <div className="flex flex-col space-y-2 mb-5">
-            <h6 className="text-2xl font-bold mb-3 text-white uppercase tracking-wider">
+          <div className="flex flex-col space-y-3 mb-5">
+            <h6 className="text-xl lg:text-2xl font-bold mb-4 text-white uppercase tracking-wider relative inline-block">
               Quick Links
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-brand-primary to-transparent rounded-full"></span>
             </h6>
-            <div className="text-gray-300 flex flex-col space-y-2 text-xl">
-              <div className="link-hover"><Link href={'/'}>Home</Link></div>
-              <div className="link-hover"><Link href={'/about'}>About</Link></div>
-              <div className="link-hover"><Link href={'/services'}>Services</Link></div>
-              <div className="link-hover"><Link href={'/portfolio'}>Portfolio</Link></div>
-              <div className="link-hover"><Link href={'/contact'}>Contact Us</Link></div>
+            <div className="text-gray-300 flex flex-col space-y-3">
+              <Link className="hover:text-brand-primary transition-colors duration-300" href={'/'}>Home</Link>
+              <Link className="hover:text-brand-primary transition-colors duration-300" href={'/about'}>About</Link>
+              <Link className="hover:text-brand-primary transition-colors duration-300" href={'/services'}>Services</Link>
+              <Link className="hover:text-brand-primary transition-colors duration-300" href={'/portfolio'}>Portfolio</Link>
+              <Link className="hover:text-brand-primary transition-colors duration-300" href={'/contact'}>Contact Us</Link>
             </div>
           </div>
-          <div className="flex flex-col text-lg space-y-2">
-            <h6 className="text-2xl font-bold mb-3 text-white uppercase tracking-wider ">
+          <div className="flex flex-col text-md space-y-4">
+            <h6 className="text-xl lg:text-2xl font-bold mb-4 text-white uppercase tracking-wider relative inline-block">
               Contact Info
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-brand-primary to-transparent rounded-full"></span>
             </h6>
             <p className="text-gray-300 text-xl">
               {" "}
@@ -77,10 +82,9 @@ const Footer = () => {
             </p>
           </div>
         </footer>
-        <div className="footer bg-[#717171] text-white items-center justify-center p-4">
-          <aside className="grid-flow-col items-center text-center ">
-            <p> © 2025 OBLIQA IT Solutions All rights reserved.</p>
-            &nbsp;
+        <div className="footer bg-slate-950 border-t border-white/5 text-gray-400 items-center justify-center py-6 text-sm">
+          <aside className="grid-flow-col items-center text-center">
+            <p> © 2026 OBLIQA IT Solutions. All rights reserved.</p>
           </aside>
         </div>
       </>
