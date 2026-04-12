@@ -1,5 +1,7 @@
 "use client";
-const about_video = "/Video/about_video.mp4";
+const videoHls = "/Video/hls/about/playlist.m3u8";
+const videoMp4 = "/Video/about_video_optimized.mp4";
+const videoPoster = "/Video/about_video_poster.jpg";
 import GetInTouch from '../../shared/GetInTouch';
 import Video from '../../shared/Video';
 import ServiceDetails from '../ServiceDetails/ServiceDetails';
@@ -14,7 +16,12 @@ const AboutObliqa = () => {
       <section className="relative w-full pt-28 pb-10 lg:h-screen flex items-center justify-center text-center text-white">
   {/* Background Video */}
   <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-    <Video videoSrc={about_video} className="w-full h-full object-cover absolute" />
+    <Video 
+      videoSrc={videoHls} 
+      fallbackSrc={videoMp4}
+      poster={videoPoster}
+      className="w-full h-full object-cover absolute" 
+    />
     <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div> {/* Dark Overlay */}
   </div>
 

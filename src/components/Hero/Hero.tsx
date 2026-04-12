@@ -4,7 +4,9 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 import Video from '../../shared/Video';
 import whatsappIcon from "../../assets/whatsapp_icon.png";
 
-const video = '/Video/Hero_bg_video.mp4';
+const videoHls = '/Video/hls/hero/playlist.m3u8';
+const videoMp4 = '/Video/Hero_bg_video_optimized.mp4';
+const videoPoster = '/Video/Hero_bg_video_poster.jpg';
 
 const Hero = () => {
   const controls = useAnimation();
@@ -38,7 +40,12 @@ const Hero = () => {
         animate={controls}
         variants={videoVariants}
       >
-        <Video videoSrc={video} className="w-full h-full object-cover" />
+        <Video 
+          videoSrc={videoHls} 
+          fallbackSrc={videoMp4} 
+          poster={videoPoster}
+          className="w-full h-full object-cover" 
+        />
         <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
       </motion.div>
 
