@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from '../Hero/Hero';
+import ServicesAndStats from '../ServicesAndStats/ServicesAndStats';
 import About from '../About/About';
 import WhyChoseUs from '../WhyChoseUs/WhyChoseUs';
 import GetStartedSection from '../GetStartedSection/GetStartedSection';
@@ -18,6 +19,7 @@ const Home = () => {
   return (
     <div className='bg-[#F5F7FA] dark:bg-slate-950 transition-colors duration-300'>
       <Hero></Hero>
+      <ServicesAndStats></ServicesAndStats>
       <About></About>
       <AgencyDifference></AgencyDifference>
       <GetStartedSection></GetStartedSection>

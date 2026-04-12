@@ -2,8 +2,6 @@
 import { useRef, useEffect } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import Video from '../../shared/Video';
-import { Link as ScrollLink } from "react-scroll";
-import Link from 'next/link';
 import whatsappIcon from "../../assets/whatsapp_icon.png";
 
 const video = '/Video/Hero_bg_video.mp4';
@@ -19,30 +17,6 @@ const Hero = () => {
     }
   }, [isInView, controls]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        damping: 10,
-        stiffness: 100
-      }
-    }
-  };
-
   const videoVariants = {
     hidden: { scale: 1.2, opacity: 0 },
     visible: {
@@ -56,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <div ref={ref} className="relative w-full h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
+    <div ref={ref} className="relative w-full min-h-[100dvh] bg-black overflow-hidden flex flex-col justify-start">
       {/* Background Video with Animation */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full overflow-hidden"
@@ -65,53 +39,56 @@ const Hero = () => {
         variants={videoVariants}
       >
         <Video videoSrc={video} className="w-full h-full object-cover" />
-        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
       </motion.div>
 
-      {/* Hero Content with Staggered Animations */}
-      <motion.div
-        className="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center justify-center text-center text-white"
-        initial="hidden"
-        animate={controls}
-        variants={containerVariants}
-      >
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6"
-          variants={itemVariants}
-        >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] filter brightness-110">
-            OBLIQA IT Solutions
-          </span>
-        </motion.h1>
+      {/* Ambient glow from the design */}
+      <div className="ambient ambient-1"></div>
+      <div className="ambient ambient-2"></div>
 
-        <motion.p
-          className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 max-w-2xl"
-          variants={itemVariants}
-        >
-          We deliver top-quality digital solutions, including web design, development, SEO, and marketing, tailored to your business. Our strategies boost growth, visibility, and digital transformation for startups and enterprises alike. With expert support, we ensure your success online.
-        </motion.p>
+      {/* Hero Content */}
+      <main className="hero-content-wrapper">
+        <div className="hero-badge">
+          <div className="badge-dot"></div>
+          Full-Service Digital Agency
+        </div>
 
-        <motion.div variants={itemVariants}>
-          <ScrollLink
-            to="how_we_work"
-            smooth={true}
-            duration={500}
-            offset={-70}
-          >
-            <motion.button
-              className="px-10 py-4 bg-gradient-to-r from-[#f27f20] to-orange-600 rounded-full font-bold text-white transition-all duration-300 shadow-xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Started
-            </motion.button>
-          </ScrollLink>
-        </motion.div>
-      </motion.div>
+        <h1 className="hero-headline">
+          We Build Digital Products<br />
+          That <em>Drive Real</em> Business Growth
+        </h1>
+
+        <p className="hero-sub">
+          From custom web development and SEO to brand strategy and digital marketing — OBLIQA delivers end-to-end solutions so your business thrives online.
+        </p>
+
+        <div className="hero-cta-row">
+          <a href="/contact" className="btn-primary-new">
+            Start Your Project
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+          </a>
+          <a href="/portfolio" className="btn-ghost-new">
+            View Our Work
+          </a>
+          <div className="social-proof">
+            <div className="avatars">
+              <div className="avatar a1">JK</div>
+              <div className="avatar a2">SM</div>
+              <div className="avatar a3">RA</div>
+              <div className="avatar a4">TN</div>
+            </div>
+            <div className="proof-text">
+              <strong>150+ clients</strong> trust us<br />with their digital growth
+            </div>
+          </div>
+        </div>
+
+
+      </main>
 
       {/* Animated Whatsapp Indicator */}
       <motion.div
-        className="absolute bottom-6 md:bottom-10 left-6 md:left-1/2 md:transform md:-translate-x-1/2 z-50"
+        className="absolute bottom-6 md:bottom-10 left-6 md:left-1/2 md:transform md:-translate-x-1/2 z-50 mb-4 md:mb-0"
         animate={{ y: [0, 10, 0], opacity: [0.6, 1, 0.6] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >

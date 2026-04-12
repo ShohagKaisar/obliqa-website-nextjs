@@ -18,10 +18,12 @@ export const metadata: Metadata = {
     description: "Empowering your business with scalable web development and innovative digital solutions.",
     type: "website",
   },
-    icons: {
-    icon: "/favicon.png", // or .svg
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "any" },
+    ],
     shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    apple: { url: "/favicon.png", type: "image/png" },
   },
 };
 
