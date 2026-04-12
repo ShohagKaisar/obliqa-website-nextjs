@@ -27,7 +27,7 @@ const otherAgencies = [
 
 export default function AgencyDifference() {
   return (
-    <section className="bg-[#F5F7FA] dark:bg-slate-950 px-4 py-16 transition-colors duration-300">
+    <section className="bg-[#F5F7FA] dark:bg-slate-950 px-6 py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div

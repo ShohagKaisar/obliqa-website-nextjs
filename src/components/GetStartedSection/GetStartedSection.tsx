@@ -80,7 +80,7 @@ export default function GetStartedSection() {
   ];
 
   return (
-    <div id="get-started" className="mx-auto px-4 pb-4 sm:px-2 lg:px-6 bg-[#F5F7FA] dark:bg-slate-950 transition-colors duration-300">
+    <div id="get-started" className="mx-auto px-2 pb-4 sm:px-2 lg:px-6 bg-[#F5F7FA] dark:bg-slate-950 transition-colors duration-300">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
