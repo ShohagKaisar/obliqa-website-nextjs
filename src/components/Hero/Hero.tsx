@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <div ref={ref} className="relative w-full min-h-[100dvh] bg-black overflow-hidden flex flex-col justify-center">
+    <div ref={ref} className="relative w-full min-h-[100svh] bg-black overflow-hidden flex flex-col justify-center hero-section">
       {/* Background Video with Animation */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full overflow-hidden"
