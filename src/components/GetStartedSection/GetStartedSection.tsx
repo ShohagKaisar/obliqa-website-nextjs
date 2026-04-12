@@ -108,7 +108,7 @@ export default function GetStartedSection() {
           >
             <motion.div
               variants={cardVariants}
-              className={`h-full ${section.color} rounded-xl shadow-md dark:shadow-none overflow-hidden text-white transition-colors duration-300`}
+              className={`h-full ${section.color} rounded-3xl shadow-md dark:shadow-none overflow-hidden text-white transition-colors duration-300`}
             >
               <div className="p-8 h-full flex flex-col">
                 <div className="flex items-center mb-4">
