@@ -104,7 +104,7 @@ html {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  padding: 140px 48px 60px;
+  padding: 100px 48px 60px;
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
@@ -476,7 +476,7 @@ html {
 /* Laptop / medium-large: 1100px - 1279px */
 @media (max-width: 1280px) {
   .hero-content-wrapper {
-    padding: 140px 40px 60px;
+    padding: 100px 40px 60px;
   }
 
   .hero-headline {
@@ -492,7 +492,7 @@ html {
   }
 
   .hero-content-wrapper {
-    padding: 130px 32px 50px;
+    padding: 90px 32px 50px;
   }
 
   .hero-headline {
@@ -522,7 +522,9 @@ html {
 /* Tablet portrait: 640px - 767px */
 @media (max-width: 768px) {
   .hero-content-wrapper {
-    padding: 120px 24px 40px;
+    padding: 90px 24px 40px;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-headline {
@@ -542,10 +544,12 @@ html {
     font-size: 11px;
     padding: 5px 12px;
     margin-bottom: 24px;
+    align-self: center;
   }
 
   .hero-cta-row {
     flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 36px;
   }
@@ -561,7 +565,7 @@ html {
   }
 
   .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
@@ -570,28 +574,45 @@ html {
   }
 
   .stat-item {
+    flex: none;
+    width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--border);
-    width: 100%;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
   .stat-item:last-child {
     border-bottom: none;
   }
 
+  .stat-item:nth-child(odd) {
+    border-right: none;
+  }
+
   .stat-num {
-    font-size: 22px;
+    font-size: 36px;
+    min-width: 80px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    max-width: none;
   }
 }
 
 /* Mobile: max 480px */
 @media (max-width: 480px) {
   .hero-content-wrapper {
-    padding: 110px 16px 32px;
+    padding: 90px 16px 32px;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-headline {
-    font-size: clamp(24px, 7vw, 34px);
+    font-size: clamp(26px, 7vw, 36px);
     line-height: 1.15;
     margin-bottom: 14px;
   }
@@ -607,13 +628,15 @@ html {
     padding: 5px 10px;
     margin-bottom: 18px;
     letter-spacing: 0.04em;
+    align-self: center;
   }
 
   .hero-cta-row {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
     margin-bottom: 28px;
+    width: 100%;
   }
 
   .btn-primary-new,
@@ -624,25 +647,61 @@ html {
     font-size: 14px;
   }
 
+  /* Services: 1 card per row on small mobile */
   .services-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .service-card {
+    padding: 18px 16px;
   }
 
   .card-title {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .card-desc {
-    font-size: 11px;
+    font-size: 12px;
+  }
+
+  /* Stats: single column, full-width rows on mobile */
+  .stats-bar {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: unset;
+  }
+
+  .stat-item {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: unset;
+  }
+
+  .stat-item:nth-child(even),
+  .stat-item:nth-child(odd) {
+    border-right: none;
+  }
+
+  .stat-item:nth-last-child(-n+2),
+  .stat-item:last-child {
+    border-bottom: none;
   }
 
   .stat-num {
-    font-size: 20px;
+    font-size: 34px;
+    min-width: 80px;
   }
 
   .stat-label {
-    font-size: 11px;
+    font-size: 14px;
+    max-width: none;
   }
 
   .ambient-1,
